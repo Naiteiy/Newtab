@@ -1,0 +1,104 @@
+.xuanx{
+    width: 140px;
+    height: 0px;
+    overflow: hidden;
+}
+.hitokoto{
+    position: absolute; left: 50%; top: 95%; 
+
+    transform: translate(-50%, -50%); 
+}
+.bgg.active{
+    filter: blur(10px);
+    transition: all 0.5s;
+}
+.bgg.active1{
+    filter: blur(0px);
+    transition: all 0.5s;
+}
+.tab{
+    width: 130px;
+    height: 50px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: rgb(74, 183, 255);
+    cursor:pointer;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 6px;
+}
+table,tr,td{
+    border: 0px;
+}
+.option{
+    width: 150px;
+}
+.testimg{
+    width: 60px;
+
+}
+.xuanx.active{
+    width: 130px;
+    height: 200px;
+    margin-left: -2px;
+    transition: all 0.5s;
+}
+.xuanx.active1{
+    width: 130px;
+    height: 200px;
+    margin-left: -200px;
+    transition: all 0.5s;
+}
+.xx{
+    
+    border: 0px;
+    background-color: rgb(74, 183, 255);
+    width: 130px;
+    height: 50px;
+    cursor:pointer;
+    font-size: 16px;
+    color: white;
+    transition: all 0.5s;
+    
+}
+.xx:hover{
+    font-size: 15px;
+    background-color: rgb(0, 119, 255);
+    transition: all 0.1s;
+}
+table,tr,td:hover{
+    background-color: rgb(0, 119, 255);
+    transition: all 0.1s;
+}
+
+a{
+    text-decoration:none;
+    
+}
+.test{
+    width: 40px; 
+    height: 40px; 
+    margin-left: 15px;
+    margin-top: 15px;
+    cursor:pointer;
+
+}
+.test.active{
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}
+.test.active1{
+    width: 40px; 
+    height: 40px; 
+    margin-left: 15px;
+    margin-top: 15px;
+    cursor:pointer;
+    transition: all 0.5s;
+}
+
+.animation {
+    transition: all 0.5s;
+    transform: rotate(180deg);
+
+}
+
