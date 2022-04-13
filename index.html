@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Naiteiy的主页
+    </title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/denglong.css">
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+    <!--End-->
+    <script>
+        fetch('https://v1.hitokoto.cn')
+            .then(function (res) {
+                return res.json();
+            })
+            .then(function (data) {
+                var hitokoto = document.getElementById('hitokoto');
+                hitokoto.innerText = "「  "+data.hitokoto+" 」";
+            })
+            .catch(function (err) {
+                console.error(err);
+            })</script>
+</head>
+
+<body οnlοad="getNowDate()">
+    <div class="option" id="option">
+        <div class="testimg" id="testimg">
+            <img src="./img/list.png" class="test" id="test">
+        </div>
+        <div style="" class="xuanx" id="xuanx">
+            <table class="tab" id="tab">
+                <tr>
+                    <td><input type="button" value="樱花API" id="xx" class="xx" onclick="changeImage1()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="随机图床" id="xx" class="xx" onclick="changeImage2()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="随机必应" id="xx" class="xx" onclick="changeImage3()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="默认" id="xx" class="xx" onclick="changeImage4()"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/蒲公英.js"></script>
+    <img src="./img/bg.png" class="bgg" id="bgg"
+        style="background-size:150% 150%;z-index: -11;position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;">
+    <div class="time">
+        <div class="showTime">00:00:00</div>
+    </div>
+    <div class="search">
+        <div class="icon"></div>
+        <form action="/s">
+            <div class="input">
+                <input type="text" placeholder="Search" id="mysearch" name="wd" autocomplete="off" style="background: rgba(255, 255, 255, 0.37);">
+                <input type="submit" formaction="https://www.baidu.com/s" style="width: 0;">
+            </div>
+        </form>
+        <span class="clear" onclick="document.getElementById('mysearch').value =''"></span>
+    </div>
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">喜迎</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">新春</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+    <p id="hitokoto" class="hitokoto" style="color: white;">:D 获取中...</p>
+</div>
+    <script>
+        function changeImage1() {
+            var element = document.getElementById('bgg');
+            element.src = "https://www.dmoe.cc/random.php";
+        }
+        function changeImage2() {
+            var element = document.getElementById('bgg');
+            element.src = "https://api.yimian.xyz/img?type=imgbed";
+        }
+        function changeImage3() {
+            var element = document.getElementById('bgg');
+            element.src = "https://api.yimian.xyz/img?type=wallpaper";
+        }
+        function changeImage4() {
+            var element = document.getElementById('bgg');
+            element.src = "https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN";
+        }
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search');
+        const all = document.querySelector('.input');
+        const xuanx = document.querySelector('.xuanx');
+        const test = document.querySelector('.test');
+        const one = document.querySelector('.test,.xuanx');
+        const option = document.querySelector('.option');
+        const bgg = document.querySelector('.bgg');
+        var a = 1;
+        xuanx.classList.toggle('active1')
+        test.classList.toggle('active1')
+        search.classList.toggle('active1')
+        bgg.classList.toggle('active1')
+        one.onmousedown = function () {
+            event.stopPropagation()
+            test.classList.toggle('active1')
+            test.classList.toggle('active')
+            xuanx.classList.toggle('active1')
+            xuanx.classList.toggle('active')
+            bgg.classList.toggle('active1')
+            bgg.classList.toggle('active')
+        }
+
+        all.onmouseover = function () {
+            event.stopPropagation()
+            search.classList.toggle('active1')
+            search.classList.toggle('active')
+            bgg.classList.toggle('active1')
+            bgg.classList.toggle('active')
+            event.stopPropagation()
+
+        }
+        all.onmouseout = function () {
+            event.stopPropagation()
+            search.classList.toggle('active1')
+            search.classList.toggle('active')
+            bgg.classList.toggle('active1')
+            bgg.classList.toggle('active')
+            event.stopPropagation()
+        }
+
+    </script>
+</body>
+
+</html>
